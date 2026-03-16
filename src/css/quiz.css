@@ -1,0 +1,207 @@
+/* ============================================================
+   css/quiz.css — Quiz Section Styles
+   ============================================================ */
+
+.quiz-section {
+  background: var(--cream-light);
+}
+
+.quiz-container {
+  max-width: 740px;
+  margin: 0 auto;
+}
+
+/* Progress Bar */
+.quiz-progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.progress-track {
+  flex: 1;
+  height: 8px;
+  background: var(--green-100);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green-600), var(--green-400));
+  border-radius: var(--radius-full);
+  transition: width 0.5s var(--ease);
+}
+
+.progress-text {
+  font-size: var(--text-sm);
+  color: var(--text-300);
+  font-weight: 500;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Quiz Card */
+.quiz-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-12) var(--space-12);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+
+.quiz-question {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--green-800);
+  margin-bottom: var(--space-8);
+  line-height: 1.45;
+}
+
+/* Options */
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.quiz-option {
+  background: var(--cream);
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 14px 20px;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--text-500);
+  text-align: left;
+  transition: all var(--transition);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.quiz-option:hover:not(:disabled) {
+  border-color: var(--green-400);
+  background: var(--green-100);
+  color: var(--green-800);
+  transform: translateX(4px);
+}
+
+.quiz-option.correct {
+  background: var(--emerald-100);
+  border-color: var(--green-500);
+  color: var(--green-700);
+  font-weight: 500;
+}
+
+.quiz-option.wrong {
+  background: var(--red-100);
+  border-color: var(--red-500);
+  color: #b71c1c;
+}
+
+.quiz-option:disabled {
+  cursor: default;
+}
+
+/* Feedback */
+.quiz-feedback {
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-5);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.quiz-feedback.correct-fb {
+  background: var(--emerald-100);
+  border-left: 4px solid var(--green-500);
+  color: var(--green-700);
+}
+
+.quiz-feedback.correct-fb strong {
+  font-weight: 700;
+}
+
+.quiz-feedback.wrong-fb {
+  background: var(--red-100);
+  border-left: 4px solid var(--red-500);
+  color: #b71c1c;
+}
+
+.quiz-feedback.wrong-fb strong {
+  font-weight: 700;
+}
+
+/* Result Screen */
+.quiz-result {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-20) var(--space-12);
+  text-align: center;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+
+.result-emoji {
+  font-size: 5rem;
+  margin-bottom: var(--space-5);
+  line-height: 1;
+  animation: resultPop 0.5s var(--ease) both;
+}
+
+@keyframes resultPop {
+  from { transform: scale(0.5); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+.result-title {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  color: var(--green-800);
+  margin-bottom: var(--space-3);
+}
+
+.result-desc {
+  font-size: var(--text-base);
+  color: var(--text-300);
+  margin-bottom: var(--space-3);
+  font-weight: 300;
+}
+
+.result-score {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--green-600);
+  margin-bottom: var(--space-8);
+}
+
+.result-breakdown {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  margin-bottom: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.score-pill {
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.score-pill.correct-pill {
+  background: var(--emerald-100);
+  color: var(--green-700);
+}
+
+.score-pill.wrong-pill {
+  background: var(--red-100);
+  color: #b71c1c;
+}

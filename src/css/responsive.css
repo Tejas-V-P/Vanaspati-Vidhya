@@ -1,0 +1,35 @@
+/* css/responsive.css — Breakpoints */
+@media (max-width: 1024px) {
+  .iks-layout { grid-template-columns: 1fr; gap: var(--space-12); }
+  .contact-layout { grid-template-columns: 1fr; gap: var(--space-10); }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-8); }
+  .footer-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 900px) {
+  .benefits-grid { grid-template-columns: 1fr 1fr; }
+  .doshas-grid { grid-template-columns: 1fr; gap: var(--space-6); }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .stat-item:nth-child(2) { border-right: none; }
+}
+@media (max-width: 768px) {
+  :root { --container-pad: 18px; }
+  .section { padding: var(--space-16) 0; }
+  .nav-links { display: none; position: fixed; top: var(--nav-height); left: 0; right: 0; background: var(--cream-light); flex-direction: column; gap: var(--space-1); padding: var(--space-5) var(--space-5); border-bottom: 1px solid var(--color-border); box-shadow: var(--shadow-md); list-style: none; }
+  .nav-links.open { display: flex; }
+  .nav-link { padding: 11px 16px; font-size: var(--text-base); border-radius: var(--radius-sm); }
+  .hamburger { display: flex; }
+  .plants-grid { grid-template-columns: 1fr; }
+  .iks-cards { grid-template-columns: 1fr; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .quiz-card { padding: var(--space-8) var(--space-6); }
+  .quiz-result { padding: var(--space-12) var(--space-6); }
+  .form-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .hero-cta { flex-direction: column; align-items: center; }
+  .hero-title { font-size: 2.8rem; }
+  .section-title { font-size: var(--text-3xl); }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .plant-filter { gap: var(--space-2); }
+}

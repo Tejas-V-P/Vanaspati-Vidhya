@@ -1,0 +1,105 @@
+/* ============================================================
+   css/variables.css — Design Tokens & CSS Custom Properties
+   ============================================================ */
+
+:root {
+  /* ── Colour Palette ── */
+  --green-900: #0b1e0e;
+  --green-800: #0f2d13;
+  --green-700: #1a4520;
+  --green-600: #276030;
+  --green-500: #3a7d44;
+  --green-400: #52a85e;
+  --green-300: #8dc994;
+  --green-200: #c2e8c7;
+  --green-100: #e8f7ea;
+  --green-50:  #f2fbf3;
+
+  --gold-900: #6b3a00;
+  --gold-700: #a86010;
+  --gold-500: #c8861a;
+  --gold-400: #e09820;
+  --gold-200: #f5c860;
+  --gold-100: #fde68a;
+  --gold-50:  #fef9ec;
+
+  --cream-dark:  #e8e0cc;
+  --cream:       #f5f0e8;
+  --cream-light: #faf7f2;
+  --white:       #ffffff;
+
+  --text-900: #0e1a10;
+  --text-700: #1e3322;
+  --text-500: #3a5a40;
+  --text-300: #6a8a70;
+  --text-100: #a8c4ac;
+
+  --red-500: #d93025;
+  --red-100: #fdecea;
+  --emerald-100: #e4f4e6;
+
+  /* ── Semantic Aliases ── */
+  --color-bg:          var(--cream-light);
+  --color-surface:     var(--white);
+  --color-border:      rgba(58, 125, 68, 0.12);
+  --color-border-mid:  rgba(58, 125, 68, 0.25);
+  --color-primary:     var(--green-600);
+  --color-primary-dark:var(--green-700);
+  --color-accent:      var(--gold-500);
+  --color-text:        var(--text-900);
+  --color-text-mid:    var(--text-500);
+  --color-text-light:  var(--text-300);
+
+  /* ── Typography ── */
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body:    'Nunito', 'Segoe UI', Arial, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+
+  --text-xs:   0.72rem;
+  --text-sm:   0.85rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+  --text-4xl:  2.25rem;
+  --text-5xl:  3rem;
+
+  /* ── Spacing ── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* ── Border Radius ── */
+  --radius-sm:  6px;
+  --radius:     14px;
+  --radius-lg:  20px;
+  --radius-xl:  28px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-sm:  0 2px 8px rgba(15, 45, 20, 0.07);
+  --shadow:     0 6px 24px rgba(15, 45, 20, 0.10);
+  --shadow-md:  0 12px 36px rgba(15, 45, 20, 0.14);
+  --shadow-lg:  0 20px 56px rgba(15, 45, 20, 0.20);
+  --shadow-xl:  0 32px 80px rgba(15, 45, 20, 0.25);
+
+  /* ── Transitions ── */
+  --ease:        cubic-bezier(0.4, 0, 0.2, 1);
+  --transition:  0.3s var(--ease);
+  --transition-slow: 0.5s var(--ease);
+
+  /* ── Layout ── */
+  --nav-height: 72px;
+  --container-max: 1240px;
+  --container-pad: 28px;
+}

@@ -1,0 +1,341 @@
+/* ============================================================
+   css/alchemy.css — Alchemy Interactive Page Styles
+   ============================================================ */
+
+.alchemy-section {
+  background: linear-gradient(180deg, #0d120e 0%, #1a2a20 100%);
+  color: var(--cream);
+  min-height: calc(100vh - 60px);
+  padding: var(--space-12) 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.alchemy-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(56, 140, 89, 0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.alchemy-header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.alchemy-title {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  color: var(--green-300);
+  text-shadow: 0 0 20px rgba(56, 140, 89, 0.4);
+  margin-bottom: var(--space-2);
+}
+
+.alchemy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .alchemy-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+}
+
+/* ── The Herb Shelf ── */
+.herb-shelf {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  backdrop-filter: blur(10px);
+}
+
+.shelf-title {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--green-200);
+  margin-bottom: var(--space-4);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.herb-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  gap: var(--space-3);
+}
+
+.herb-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: var(--radius-lg);
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.herb-item:hover {
+  background: rgba(56, 140, 89, 0.2);
+  border-color: rgba(56, 140, 89, 0.5);
+  transform: translateY(-2px);
+}
+
+.herb-item.selected {
+  background: rgba(56, 140, 89, 0.4);
+  border-color: var(--green-400);
+  box-shadow: 0 0 10px rgba(56, 140, 89, 0.3);
+}
+
+.herb-emoji {
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+.herb-name {
+  font-size: 0.65rem;
+  text-align: center;
+  color: var(--cream);
+  line-height: 1.1;
+}
+
+/* ── The Cauldron ── */
+.cauldron-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.cauldron-container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-6);
+}
+
+.cauldron-icon {
+  font-size: 8rem;
+  z-index: 2;
+  text-shadow: 0 10px 20px rgba(0,0,0,0.8);
+  animation: floatCauldron 4s ease-in-out infinite;
+}
+
+@keyframes floatCauldron {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.glow-effect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--green-400) 0%, transparent 70%);
+  opacity: 0.2;
+  filter: blur(20px);
+  z-index: 1;
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.glow-effect.active {
+  opacity: 0.8;
+  transform: translate(-50%, -50%) scale(1.5);
+  background: radial-gradient(circle, #ffb142 0%, #ff5252 40%, transparent 70%);
+  animation: pulseGlow 2s infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { filter: blur(20px); opacity: 0.6; }
+  100% { filter: blur(30px); opacity: 1; text-shadow: 0 0 40px #ffb142; }
+}
+
+.pot-ingredients {
+  display: flex;
+  gap: var(--space-2);
+  min-height: 60px;
+  margin-bottom: var(--space-4);
+}
+
+.pot-herb {
+  width: 50px;
+  height: 50px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: 1px dashed rgba(255,255,255,0.3);
+  transition: all 0.2s;
+}
+
+.pot-herb:hover {
+  background: rgba(255,0,0,0.2);
+  border-color: rgba(255,0,0,0.5);
+}
+
+.pot-herb.empty {
+  cursor: default;
+}
+.pot-herb.empty:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.3);
+}
+
+.brew-btn {
+  background: linear-gradient(135deg, var(--green-500), var(--green-700));
+  color: var(--white);
+  border: none;
+  padding: 12px 32px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(56, 140, 89, 0.4);
+}
+
+.brew-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(56, 140, 89, 0.6);
+  background: linear-gradient(135deg, var(--green-400), var(--green-600));
+}
+
+.brew-btn:disabled {
+  background: #333;
+  color: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ── Suggested Recipes Panel ── */
+.recipe-results {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  backdrop-filter: blur(10px);
+  min-height: 400px;
+}
+
+.recipe-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.recipe-card {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(56, 140, 89, 0.3);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  transition: all 0.3s;
+  animation: slideIn 0.4s ease-out forwards;
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+@keyframes slideIn {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.recipe-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--green-400);
+}
+
+.recipe-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.recipe-emoji {
+  font-size: 2.5rem;
+  background: rgba(255,255,255,0.05);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.recipe-name {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--green-300);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.recipe-type {
+  font-size: var(--text-xs);
+  color: var(--amber-300);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+.recipe-desc {
+  font-size: var(--text-sm);
+  color: var(--text-300);
+  line-height: 1.6;
+  margin-bottom: var(--space-3);
+}
+
+.recipe-ingredients {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.ing-badge {
+  background: rgba(56, 140, 89, 0.2);
+  color: var(--green-100);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 500;
+  border: 1px solid rgba(56, 140, 89, 0.4);
+}
+
+.ing-badge.missing {
+  background: rgba(255, 255, 255, 0.05);
+  color: #888;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.no-results-msg {
+  text-align: center;
+  padding: var(--space-8) 0;
+  color: var(--text-400);
+}
+
+.no-results-msg span {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: var(--space-4);
+  opacity: 0.5;
+}

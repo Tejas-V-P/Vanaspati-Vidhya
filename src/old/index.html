@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vanaspati Vidya — Indian Medicinal Plants educational website. Learn about Ayurveda, IKS, healing herbs and their scientific significance." />
+  <title>Vanaspati Vidya | Indian Medicinal Plants — IKS Project</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets (load order matters) -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/plants.css" />
+  <link rel="stylesheet" href="css/quiz.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <!-- React 18 via CDN -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <!-- Babel for JSX transpiling in-browser -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+
+  <!-- Static HTML skeleton rendered immediately (SEO + no-JS fallback) -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">
+        <span class="logo-icon">🌿</span>
+        <span class="logo-text">Vanaspati Vidya</span>
+      </a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks" role="navigation" aria-label="Main navigation">
+        <li><a href="#home"     class="nav-link">Home</a></li>
+        <li><a href="#iks"      class="nav-link">IKS</a></li>
+        <li><a href="#plants"   class="nav-link">Plants</a></li>
+        <li><a href="#benefits" class="nav-link">Benefits</a></li>
+        <li><a href="#doshas"   class="nav-link">Ayurveda</a></li>
+        <li><a href="#quiz"     class="nav-link">Quiz</a></li>
+        <li><a href="#contact"  class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero (static HTML, enhanced by JS) -->
+  <section id="home" class="hero">
+    <div class="hero-floats" aria-hidden="true">
+      <span class="hf hf-1">🍃</span>
+      <span class="hf hf-2">🌿</span>
+      <span class="hf hf-3">🍀</span>
+      <span class="hf hf-4">🌱</span>
+      <span class="hf hf-5">🌾</span>
+      <span class="hf hf-6">🌸</span>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">🌿 Indian Knowledge System — IKS Project</div>
+      <h1 class="hero-title">Ancient Wisdom,<br/><em>Living Roots</em></h1>
+      <p class="hero-subtitle">वनस्पति विद्या — The Science of Healing Plants</p>
+      <p class="hero-desc">
+        A comprehensive educational resource on India's sacred medicinal plants —
+        exploring their Ayurvedic traditions, health benefits, and modern scientific
+        validation as part of the IKS initiative under NEP 2020.
+      </p>
+      <div class="hero-cta">
+        <a href="#plants" class="btn btn-primary">🌿 Explore 10 Plants</a>
+        <a href="#iks"    class="btn btn-outline">Learn About IKS</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>Scroll to explore</span>
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+
+  <!-- Stats Strip (static) -->
+  <div class="stats-strip" id="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item"><span class="stat-num" data-target="5000">0</span><span class="stat-suffix">+</span><span class="stat-label">Years of Ayurveda</span></div>
+        <div class="stat-item"><span class="stat-num" data-target="8000">0</span><span class="stat-suffix">+</span><span class="stat-label">Medicinal Plant Species</span></div>
+        <div class="stat-item"><span class="stat-num" data-target="10">0</span><span class="stat-suffix"></span><span class="stat-label">Plants Covered</span></div>
+        <div class="stat-item"><span class="stat-num" data-target="700">0</span><span class="stat-suffix">+</span><span class="stat-label">Herbs in Charaka Samhita</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IKS Section (static HTML) -->
+  <section id="iks" class="section iks-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">About</div>
+        <h2 class="section-title">Indian Knowledge System</h2>
+      </div>
+      <div class="iks-layout">
+        <div class="iks-text reveal">
+          <blockquote class="iks-quote">"Let food be thy medicine and medicine be thy food" — a principle embedded in Ayurveda thousands of years before modern science echoed it.</blockquote>
+          <p>The <strong>Indian Knowledge System (IKS)</strong> is a vast, structured body of knowledge developed across millennia — encompassing <em>Ayurveda, Yoga, Naturopathy, Unani, Siddha, and Homeopathy (AYUSH)</em>. These systems are not superstition — they are rigorous frameworks born of centuries of clinical observation.</p>
+          <p>Ancient texts like the <em>Charaka Samhita</em> (300 BCE), <em>Sushruta Samhita</em>, and <em>Ashtanga Hridayam</em> document sophisticated pharmacology, surgical techniques, and preventive medicine — much of which has since been validated by modern science.</p>
+          <p>Under <strong>NEP 2020</strong>, the Government of India has formally integrated IKS into national education through the IKS Division, Ministry of Education.</p>
+          <div class="iks-timeline">
+            <div class="tl-item"><div class="tl-dot">📜</div><div><h4>~1500 BCE — Vedic Period</h4><p>Atharvaveda documents plant-based treatments for 77 diseases. Foundation of Ayurvedic pharmacology.</p></div></div>
+            <div class="tl-item"><div class="tl-dot">🔬</div><div><h4>~300 BCE — Classical Texts</h4><p>Charaka Samhita systematises 341 plant drugs; Sushruta Samhita documents surgical use of herbs.</p></div></div>
+            <div class="tl-item"><div class="tl-dot">🌍</div><div><h4>2019 — WHO Recognition</h4><p>WHO's Traditional Medicine Strategy 2019–2025 integrates traditional systems into universal healthcare.</p></div></div>
+            <div class="tl-item"><div class="tl-dot">📚</div><div><h4>2020 — NEP Integration</h4><p>India's National Education Policy formally includes IKS as an academic discipline nationwide.</p></div></div>
+          </div>
+        </div>
+        <div class="iks-cards reveal">
+          <div class="iks-card"><div class="iks-icon">🌿</div><h3>8000+ Plant Species</h3><p>Documented for medicinal use in traditional texts — the world's most extensive botanical pharmacopoeia.</p></div>
+          <div class="iks-card"><div class="iks-icon">📚</div><h3>NEP 2020 Included</h3><p>IKS formally integrated into Indian national education — taught across schools, colleges and research institutions.</p></div>
+          <div class="iks-card"><div class="iks-icon">🔬</div><h3>Modern Validation</h3><p>Thousands of peer-reviewed studies confirm bioactive compounds predicted by Ayurvedic texts centuries ago.</p></div>
+          <div class="iks-card"><div class="iks-icon">🌏</div><h3>WHO Recognised</h3><p>World Health Organization actively promotes traditional medicine systems for sustainable global healthcare.</p></div>
+          <div class="iks-card"><div class="iks-icon">💊</div><h3>AYUSH Ministry</h3><p>Dedicated Indian ministry for Ayurveda, Yoga, Unani, Siddha and Homeopathy with global research centres.</p></div>
+          <div class="iks-card"><div class="iks-icon">🧪</div><h3>Phytochemistry</h3><p>Science of plant chemicals reveals why ancient remedies work — validating traditional knowledge with molecular data.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search Bar -->
+  <div class="search-section">
+    <div class="container">
+      <div class="search-box">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search plants — Tulsi, Brahmi, Triphala, Giloy…" aria-label="Search medicinal plants" />
+        <button id="clearSearch" class="search-clear" aria-label="Clear search" style="display:none">✕</button>
+      </div>
+      <p id="searchMessage" class="search-msg" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- ⚛️ React Mount Point — Plants Section rendered by React -->
+  <section id="plants" class="section plants-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Explore</div>
+        <h2 class="section-title">10 Medicinal Plants of India</h2>
+        <p class="section-sub">Sacred, scientific, and timeless — each plant a universe of healing, culture, and chemistry.</p>
+      </div>
+      <div id="plant-filter-root"></div>  <!-- React: Filter buttons -->
+      <div id="plants-grid-root"></div>   <!-- React: Plant cards grid -->
+      <p id="noResults" class="no-results" style="display:none">No plants match your search. Try "Tulsi", "Brahmi" or "Amla".</p>
+    </div>
+  </section>
+
+  <!-- Benefits Section (static HTML) -->
+  <section id="benefits" class="section benefits-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Why It Matters</div>
+        <h2 class="section-title">Benefits of Traditional Medicine</h2>
+        <p class="section-sub">Ayurveda is not alternative medicine — it is a complete, evidence-based system of preventive and curative healthcare with global relevance.</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card reveal"><div class="benefit-icon">🧪</div><h3>Modern Validation</h3><p>Thousands of peer-reviewed studies confirm what Ayurvedic practitioners knew centuries ago — plant bioactives are pharmacologically active and clinically effective.</p></div>
+        <div class="benefit-card reveal"><div class="benefit-icon">💊</div><h3>Fewer Side Effects</h3><p>Plant-based medicines work synergistically with the body. Properly prepared and dosed, they cause significantly fewer adverse reactions than synthetic pharmaceuticals.</p></div>
+        <div class="benefit-card reveal"><div class="benefit-icon">🧠</div><h3>Holistic Approach</h3><p>Ayurveda treats the whole person — mind, body, and spirit. The tridosha system personalises treatment based on individual constitution (Prakriti) — precision medicine 5,000 years early.</p></div>
+        <div class="benefit-card reveal"><div class="benefit-icon">♻️</div><h3>Sustainability</h3><p>Traditional herbal medicine is renewable and ecologically sustainable. Most plants are cultivable locally, reducing pharmaceutical supply chains and environmental footprint enormously.</p></div>
+        <div class="benefit-card reveal"><div class="benefit-icon">💰</div><h3>Accessible Healthcare</h3><p>For 800 million rural Indians, kitchen herbs like Tulsi, Neem and Turmeric are the first — and often most effective — line of healthcare defence, requiring no prescription or expense.</p></div>
+        <div class="benefit-card reveal"><div class="benefit-icon">🌍</div><h3>WHO Recognition</h3><p>The WHO Traditional Medicine Strategy 2025 recognises traditional systems as integral to achieving universal health coverage and the Sustainable Development Goals.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doshas Section (static HTML) -->
+  <section id="doshas" class="section doshas-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Ayurvedic Framework</div>
+        <h2 class="section-title">The Three Doshas</h2>
+        <p class="section-sub">Ayurveda's tridosha theory classifies all human constitutions into three bio-energetic forces — the original precision medicine system.</p>
+      </div>
+      <div class="doshas-grid">
+        <div class="dosha-card vata reveal">
+          <div class="dosha-symbol">💨</div>
+          <h3 class="dosha-name">Vata</h3>
+          <div class="dosha-element">Air + Space</div>
+          <p>Governs movement, breathing, nervous system, and circulation. Vata types are creative, energetic, and quick — but prone to anxiety, dryness and insomnia when imbalanced.</p>
+          <ul class="dosha-herbs"><li>🌿 <strong>Balancing herbs:</strong> Ashwagandha, Shatavari, Brahmi</li><li>🌿 <strong>Taste:</strong> Sweet, Sour, Salty</li><li>🌿 <strong>Season:</strong> Late Autumn, Winter</li></ul>
+        </div>
+        <div class="dosha-card pitta reveal">
+          <div class="dosha-symbol">🔥</div>
+          <h3 class="dosha-name">Pitta</h3>
+          <div class="dosha-element">Fire + Water</div>
+          <p>Governs digestion, metabolism, intelligence, and transformation. Pitta types are focused, ambitious, and passionate — but prone to inflammation, anger and acidity when imbalanced.</p>
+          <ul class="dosha-herbs"><li>🌿 <strong>Balancing herbs:</strong> Shatavari, Brahmi, Amla</li><li>🌿 <strong>Taste:</strong> Sweet, Bitter, Astringent</li><li>🌿 <strong>Season:</strong> Summer, Early Autumn</li></ul>
+        </div>
+        <div class="dosha-card kapha reveal">
+          <div class="dosha-symbol">🌊</div>
+          <h3 class="dosha-name">Kapha</h3>
+          <div class="dosha-element">Earth + Water</div>
+          <p>Governs structure, immunity, lubrication, and stability. Kapha types are calm, loving, and strong — but prone to weight gain, congestion and lethargy when imbalanced.</p>
+          <ul class="dosha-herbs"><li>🌿 <strong>Balancing herbs:</strong> Tulsi, Neem, Giloy, Triphala</li><li>🌿 <strong>Taste:</strong> Pungent, Bitter, Astringent</li><li>🌿 <strong>Season:</strong> Late Winter, Spring</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scrolling plant ticker -->
+  <div class="plant-ticker" aria-hidden="true">
+    <div class="ticker-track" id="tickerTrack"></div>
+  </div>
+
+  <!-- ⚛️ React Mount Point — Quiz -->
+  <section id="quiz" class="section quiz-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Test Your Knowledge</div>
+        <h2 class="section-title">Medicinal Plants Quiz</h2>
+        <p class="section-sub">10 questions covering all plants, Ayurvedic concepts, and scientific knowledge. Aim for a perfect score!</p>
+      </div>
+      <div id="quiz-root"></div> <!-- React renders quiz here -->
+    </div>
+  </section>
+
+  <!-- Contact Section (static HTML) -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Connect</div>
+        <h2 class="section-title">References & Contact</h2>
+      </div>
+      <div class="contact-layout">
+        <div class="references reveal">
+          <h3 class="contact-heading">📚 Academic References</h3>
+          <ul class="ref-list">
+            <li><strong>Charaka Samhita</strong> (est. 300 BCE) — <em>Foundational Ayurvedic pharmacology text</em></li>
+            <li><strong>Sushruta Samhita</strong> (est. 600 BCE) — <em>Surgical and herbal medicine treatise</em></li>
+            <li><strong>WHO Traditional Medicine Strategy 2019–2025</strong> — World Health Organization, Geneva</li>
+            <li>Bharat et al. (2020). <em>Phytochemistry of Ocimum tenuiflorum.</em> J. Ethnopharmacology, 254.</li>
+            <li>Gupta et al. (2021). <em>Curcumin: From ancient spice to modern medicine.</em> PLOS ONE, 16(4).</li>
+            <li>Singh et al. (2011). <em>Withania somnifera: A review of clinical evidence.</em> Phytomedicine.</li>
+            <li>Russo & Borrelli (2005). <em>Bacopa monnieri — nootropic plant.</em> Phytomedicine, 12(4).</li>
+            <li><strong>CCRAS</strong> — Central Council for Research in Ayurvedic Sciences, Ministry of AYUSH</li>
+            <li><strong>IKS Division, MoE</strong> — iksindia.org (National Education Policy 2020)</li>
+            <li>Sharma et al. (2022). <em>Tinospora cordifolia: Phytopharmacological review.</em> Pharmacognosy Reviews.</li>
+          </ul>
+        </div>
+        <div class="contact-form-wrap reveal">
+          <h3 class="contact-heading">✉️ Contact Us</h3>
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" placeholder="Priya" required /></div>
+              <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" placeholder="Sharma" required /></div>
+            </div>
+            <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" placeholder="priya@example.com" required /></div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject">
+                <option>General Enquiry</option>
+                <option>Suggest a Plant</option>
+                <option>Academic Collaboration</option>
+                <option>IKS Project Feedback</option>
+                <option>Report an Error</option>
+              </select>
+            </div>
+            <div class="form-group"><label for="message">Message</label><textarea id="message" rows="4" placeholder="Share your knowledge, suggest a plant, or ask a question about Ayurveda…" required></textarea></div>
+            <button type="submit" class="btn btn-primary">🌿 Send Message</button>
+            <div class="form-success" id="formSuccess" style="display:none">🙏 Dhanyavaad! Your message has been received. We will respond shortly.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-wrap"><span class="footer-leaf">🌿</span><div><div class="footer-name">Vanaspati Vidya</div><div class="footer-tagline">वनस्पति विद्या — The Science of Plants</div></div></div>
+          <p class="footer-desc">A comprehensive educational resource on Indian medicinal plants, developed in support of the Indian Knowledge System (IKS) initiative under NEP 2020.</p>
+        </div>
+        <div class="footer-col"><h4>Pages</h4><a href="#home">Home</a><a href="#iks">About IKS</a><a href="#plants">Medicinal Plants</a><a href="#benefits">Benefits</a><a href="#doshas">Ayurveda</a><a href="#quiz">Quiz</a></div>
+        <div class="footer-col"><h4>Plants</h4><a href="#plants">Tulsi · Neem</a><a href="#plants">Turmeric · Ashwagandha</a><a href="#plants">Aloe Vera · Amla</a><a href="#plants">Brahmi · Giloy</a><a href="#plants">Shatavari · Triphala</a></div>
+        <div class="footer-col"><h4>Resources</h4><a href="https://www.ayush.gov.in" target="_blank" rel="noopener">Ministry of AYUSH</a><a href="https://www.ccras.nic.in" target="_blank" rel="noopener">CCRAS India</a><a href="https://iksindia.org" target="_blank" rel="noopener">IKS Division MoE</a><a href="https://www.who.int" target="_blank" rel="noopener">WHO</a><a href="https://pubmed.ncbi.nlm.nih.gov" target="_blank" rel="noopener">PubMed</a></div>
+      </div>
+      <div class="footer-bottom">
+        <p>🌱 Created for the <strong>Indian Knowledge System (IKS) Project</strong> — Promoting traditional wisdom in modern education under <strong>NEP 2020</strong>.</p>
+        <p class="footer-disclaimer">⚠️ For educational purposes only. Consult a qualified Ayurvedic practitioner (Vaidya) before using herbal remedies medicinally.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       JavaScript Files — loaded in order
+  ========================================================= -->
+  <script src="data/plants.js"></script>        <!-- Plant data array -->
+  <script src="data/quiz.js"></script>           <!-- Quiz questions array -->
+  <script src="js/utils.js"></script>            <!-- Shared utility functions -->
+  <script src="js/navbar.js"></script>           <!-- Navbar scroll & mobile menu -->
+  <script src="js/animations.js"></script>       <!-- Scroll reveal, counter, ticker -->
+  <script src="js/search.js"></script>           <!-- Search & filter logic -->
+  <script src="js/contact.js"></script>          <!-- Contact form validation -->
+
+  <!-- ⚛️ React Components — loaded after data files -->
+  <script type="text/babel" src="components/PlantCard.jsx"></script>
+  <script type="text/babel" src="components/PlantsGrid.jsx"></script>
+  <script type="text/babel" src="components/PlantFilter.jsx"></script>
+  <script type="text/babel" src="components/QuizApp.jsx"></script>
+  <script type="text/babel" src="components/App.jsx"></script>
+
+</body>
+</html>
